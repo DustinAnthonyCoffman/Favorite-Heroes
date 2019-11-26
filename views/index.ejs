@@ -1,14 +1,21 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Find Your Supehero</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+<%- include('../partials/header') %>
+  
 
-  <%= userData %>
-  <form action="/" method="POST">
+<form action="/" method="POST">
   <input type="text" action="">Search for your superhero</input>
     </form>
-</body>
-</html>
+
+    <a href="" class="brand-logo left">SEI Student Fun Facts</a>
+    <!-- new html below -->
+    <ul class="right">
+      <li>
+      <% if (user) { %>
+        <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+      <% } else { %>
+        <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
+      <% } %>
+      </li>
+    </ul>
+
+    
+<%- include('../partials/footer') %>

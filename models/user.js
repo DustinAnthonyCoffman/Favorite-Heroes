@@ -11,10 +11,10 @@ const powerstats = new Schema({
 })
 
 const biography = new Schema ({
-    full-name: String,
+    "full-name": String,
     aliases: [String],
-    place-of-birth: String,
-    first-appearance: String,
+    "place-of-birth": String,
+    "first-appearance": String,
     publisher: String,
     alignment: String
 })
@@ -24,8 +24,8 @@ const appearance = new Schema ({
     race: String,
     height: [String],
     weight: [String],
-    eye-color: String,
-    hair-color: String
+    "eye-color": String,
+    "hair-color": String
 })
 
 const work = new Schema ({
@@ -33,8 +33,8 @@ const work = new Schema ({
     base: String
   })
 
-const connections = new Shema ({
-  group-affiliation: String,
+const connections = new Schema ({
+  "group-affiliation": String,
   relatives: String
 })
 
@@ -42,15 +42,15 @@ const superHeroSchema = new Schema({
     name: {
         type: String
     },
-    powerstats: [powerstats],
+    powerstats: powerstats,
 
-    biography: [biography],
+    biography: biography,
 
-    appearance: [appearance],
+    appearance: appearance,
 
-    work: [work],
+    work: work,
 
-    connections: [connections],
+    connections: connections,
 
     image: String
 
@@ -61,17 +61,20 @@ const userSchema = new Schema({
     name: {
         type: String
     },
-    
+
     email: String,
 
     collection: {
        
-        superHero: [superHeroSchema] 
+        superHero: superHeroSchema
 
     },
+
     googleId: String
 }, {
+
     timestamps: true
+
   });
 
 
