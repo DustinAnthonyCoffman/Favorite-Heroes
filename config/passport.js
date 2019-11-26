@@ -1,5 +1,5 @@
 var passport = require('passport');
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var GoogleStrategy = require('passport-google-oauth20').Strategy;
 var User = require('../models/user');
 
 passport.use(new GoogleStrategy({
@@ -14,7 +14,7 @@ passport.use(new GoogleStrategy({
           return cb(null, user);
         } else {
           // we have a new user via OAuth!
-          var user = new User({
+          var newUser = new User({
             name: profile.displayName,
             email: profile.emails[0].value,
             googleId: profile.id

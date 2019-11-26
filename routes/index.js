@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var request = require('request');  //this might be moved to the controller
 var passport = require('passport');
 var indexCtrl = require('../controllers/index')
 
@@ -8,7 +7,7 @@ const rootURL = 'https://superheroapi.com/';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', indexCtrl);
+  res.render('index', {user: req.user});
 });
 
  // Google OAuth login route
@@ -25,6 +24,17 @@ router.get('/', function(req, res, next) {
     failureRedirect : '/'
   }
 ));
+
+
+router.get('/logout', function(req, res) {
+  req.logout();
+  res.redirect('/');
+});
+
+
+
+
+
 
 // router.post('/', function(req,res) {
 //   request(
