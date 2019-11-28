@@ -20,7 +20,7 @@ router.get('/', function(req, res, next) {
  router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/',
+    successRedirect : '/home',
     failureRedirect : '/'
   }
 ));
@@ -35,14 +35,5 @@ router.get('/logout', function(req, res) {
 
 
 
-
-// router.post('/', function(req,res) {
-//   request(
-//   `${rootURL}users/${req.body.username}?access_token=${process.env.SUPERHERO_TOKEN}`,
-//   function(err, response, body) {
-//     res.render('index', {userData: body});
-//   }
-// )
-// });
 
 module.exports = router;

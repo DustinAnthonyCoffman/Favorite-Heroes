@@ -62,7 +62,7 @@ const userSchema = new Schema({
 
     email: String,
 
-    // collections: {
+    // heros: {
        
     //     superHero: superHeroSchema
 
