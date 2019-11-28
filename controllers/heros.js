@@ -14,6 +14,7 @@ function showHero(req,res) {
     function(err, response, body) {
         // console.log('body:', body); 
         let hero = JSON.parse(body);
+        console.log(Object.keys(hero));
         res.render('logged-In/heros', {
             body: body,
             hero: hero
@@ -21,20 +22,3 @@ function showHero(req,res) {
     })
 }
 
-// [0]["results"][0]
-
-// {
-//     "response": "success",
-//     "results-for": "batman",
-//     "results": [
-//       {
-//         "id": "69",
-//         "name": "Batman",
-//         "powerstats": {
-//           "intelligence": "81",
-//           "strength": "40",
-//           "speed": "29",
-//           "durability": "55",
-//           "power": "63",
-//           "combat": "90"
-//         },

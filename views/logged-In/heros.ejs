@@ -8,13 +8,16 @@
 </head>
 <body>
     
-    <h1>this is the Superos database </h1>
-    <%=body %>
-      
-      
+    <h1> <%= hero.results[0].name %> </h1>
+<ul>
+ 
+  <li>Intelligence: <%= hero.results[0].powerstats.intelligence %> </li> <br>
+  <li>Strength <%= hero.results[0].powerstats.strength %> </li> <br>
+  <li>Speed <%= hero.results[0].powerstats.speed %> </li> <br>
+  <li>Durability <%= hero.results[0].powerstats.durability %> </li> <br>
+  <li>Power <%= hero.results[0].powerstats.power %> </li> <br>
+  <li>Combat <%= hero.results[0].powerstats.combat %> </li>
+</ul>
 </body>
 </html>
-
-
-
 
