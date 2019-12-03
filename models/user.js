@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // const powerstats = new Schema({
@@ -56,17 +56,17 @@ const Schema = mongoose.Schema;
 
 //   });
 
+const superHeroSchema = new Schema({
+  name: String
+})
 
 const userSchema = new Schema({
     name: String,
 
     email: String,
 
-    // heros: {
-       
-    //     superHero: superHeroSchema
-
-    // },
+    heros:[superHeroSchema], 
+    // this needs to be save as well as the superHero
 
     googleId: String
 
@@ -76,6 +76,7 @@ const userSchema = new Schema({
     lean: true
 
   });
+
 
 
 

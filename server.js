@@ -1,22 +1,24 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var session = require('express-session');
-var passport = require('passport');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const methodOverride  = require("method-override");
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const passport = require('passport');
+const logger = require('morgan');
 require('dotenv').config();
 
 // connect to the database with Mongoose
 require('./config/database');
 require('./config/passport');
 
-var indexRouter = require('./routes/index');
-var homeRouter = require('./routes/home');
-var herosRouter = require('./routes/heros');
+const indexRouter = require('./routes/index');
+const homeRouter = require('./routes/home');
+const herosRouter = require('./routes/heros');
+const favHerosRouter = require('./routes/favHeros');
 
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -33,13 +35,14 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-
+app.use(methodOverride('_method'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/home', homeRouter);
 app.use('/', herosRouter);
+app.use('/', favHerosRouter);
 
 
 // catch 404 and forward to error handler

@@ -1,7 +1,7 @@
-var express = require('express');
-var router = express.Router();
-var passport = require('passport');
-var indexCtrl = require('../controllers/index')
+const express = require('express');
+const router = express.Router();
+const passport = require('passport');
+const indexCtrl = require('../controllers/index')
 
 const rootURL = 'https://superheroapi.com/';
 

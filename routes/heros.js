@@ -1,11 +1,12 @@
-var express = require('express');
-var router = express.Router();
-var herosCtrl = require('../controllers/heros')
+const express = require('express');
+const router = express.Router();
+const herosCtrl = require('../controllers/heros')
 
    
 
 
-router.post('/heros', herosCtrl.showHero);
+router.post('/heros', herosCtrl.showHero); // this only shows a searched hero
+// router.post('/heros', herosCtrl.showRandom);    //this needs to be a put request
     
  
 

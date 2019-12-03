@@ -1,6 +1,6 @@
-var passport = require('passport');
-var GoogleStrategy = require('passport-google-oauth20').Strategy;
-var User = require('../models/user');
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const User = require('../models/user');
 
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
@@ -14,12 +14,12 @@ passport.use(new GoogleStrategy({
           return cb(null, user);
         } else {
           // we have a new user via OAuth!
-          var newUser = new User({
+          const newUser = new User({
             name: profile.displayName,
             email: profile.emails[0].value,
             googleId: profile.id
           });
-          newUser.save(function(err) {
+          newUser.save(function(err, user) { //this is the line that is not running check your schema and make sure that every thing matches
             if (err) return cb(err);
             return cb(null, newUser);
           });
