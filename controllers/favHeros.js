@@ -5,7 +5,8 @@ const User = require('../models/user');
 
 module.exports = {
     create,
-    show
+    show,
+    delete: deleteThis
 }
 
 
@@ -33,7 +34,6 @@ User.findById(req.user._id).exec(function(err,user) {
 
 
 function show(req, res) {
-    console.log('now showing!!!?!??!?!')
     User.findById(req.user._id).exec(function(err, user) {
         if (err) res.render('logged-In/heros')
         res.render('logged-In/favHeros', {
@@ -41,3 +41,15 @@ function show(req, res) {
         })
     })
 }
+
+
+
+function deleteThis(req,res) {
+    let heroIndex = req.params.id;
+    User.findById(req.user._id).exec(function(err, user) {
+        let exactId = user.heros[heroIndex]._id
+        if (err) res.render('logged-In/heros')
+        user.heros.pull(exactId).then(res.redirect('/favHeros'))   
+       
+            })
+        }

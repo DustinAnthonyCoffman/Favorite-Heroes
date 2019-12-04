@@ -17,7 +17,6 @@ const homeRouter = require('./routes/home');
 const herosRouter = require('./routes/heros');
 const favHerosRouter = require('./routes/favHeros');
 
-
 const app = express();
 
 // view engine setup
@@ -42,7 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/home', homeRouter);
 app.use('/', herosRouter);
-app.use('/', favHerosRouter);
+app.use('/favHeros', favHerosRouter);
 
 
 // catch 404 and forward to error handler

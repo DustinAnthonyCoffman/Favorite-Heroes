@@ -4,10 +4,10 @@
 
 <ul>
        <% heros.forEach(function(hero, idx) { %>
-         <form action="/favHeros/?_method=DELETE" method="post">
+         <form action="/favHeros/<%= idx %>?_method=DELETE" method="post">
             <li> <%= hero.name %> </li>
             <button class="btn btn-dark" type="submit">Delete</button>
-          <img src="<%= hero.image %>" alt="<%= hero.name %>"> 
+          <img class= "frame" src="<%= hero.image %>" alt="<%= hero.name %>"> 
         </form>
      <%  }) %>
 

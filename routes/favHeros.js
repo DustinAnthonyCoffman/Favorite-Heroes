@@ -4,9 +4,9 @@ const favHerosCtrl = require('../controllers/favHeros')
 
 
 /* POST users listing. */
-router.get('/favHeros', favHerosCtrl.show); //redirect
-router.post('/favHeros', favHerosCtrl.create); //add hero
-// router.put('/favHeros', favHerosCtrl.show);  //put request with method override
+router.get('/', favHerosCtrl.show); //redirect
+router.post('/', favHerosCtrl.create); //add hero
+router.delete('/:id', favHerosCtrl.delete)
 
 
 module.exports = router;
