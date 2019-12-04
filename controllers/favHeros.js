@@ -21,7 +21,7 @@ User.findById(req.user._id).exec(function(err,user) {
     user.heros.push({name, image, base, occupation});  //could also do work.base, work.occupation
     user.save(function(err) {   //if user.hero.name exists render error
         if (err) return next(err)
-        res.render('logged-In/favHeros', {
+        res.render('loggedIn/favHeros', {
             heros: user.heros
 
         })
@@ -35,8 +35,8 @@ User.findById(req.user._id).exec(function(err,user) {
 
 function show(req, res) {
     User.findById(req.user._id).exec(function(err, user) {
-        if (err) res.render('logged-In/heros')
-        res.render('logged-In/favHeros', {
+        if (err) res.render('loggedIn/heros')
+        res.render('loggedIn/favHeros', {
                 heros: user.heros
         })
     })
@@ -48,7 +48,7 @@ function deleteThis(req,res) {
     let heroIndex = req.params.id;
     User.findById(req.user._id).exec(function(err, user) {
         let exactId = user.heros[heroIndex]._id
-        if (err) res.render('logged-In/heros')
+        if (err) res.render('loggedIn/heros')
         user.heros.pull(exactId).then(res.redirect('/favHeros'))   
        
             })

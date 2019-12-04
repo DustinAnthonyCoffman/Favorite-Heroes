@@ -5,5 +5,5 @@ module.exports = {
 }
 
 function homePage(req, res) {
-    res.render('logged-In/home')
+    res.render('loggedIn/home')
 }
