@@ -28,46 +28,43 @@ const Schema = mongoose.Schema;
 //     "hair-color": String
 // })
 
-// const work = new Schema ({
-//     occupation: String,
-//     base: String
-//   })
 
 // const connections = new Schema ({
-//   "group-affiliation": String,
-//   relatives: String
-// })
+  //   "group-affiliation": String,
+  //   relatives: String
+  // })
+  
+  // const superHeroSchema = new Schema({
+    //     name: {
+      //         type: String
+      //     },
+      //     powerstats: powerstats,
+      
+      //     biography: biography,
+      
+      //     appearance: appearance,
+      
+      //     work: work,
+      
+      //     connections: connections,
+      
+      //     // image: String  
+      
+      //   });
+      
 
-// const superHeroSchema = new Schema({
-//     name: {
-//         type: String
-//     },
-//     powerstats: powerstats,
-
-//     biography: biography,
-
-//     appearance: appearance,
-
-//     work: work,
-
-//     connections: connections,
-
-//     // image: String  
-
-//   });
 
 const superHeroSchema = new Schema({
-  name: String
+  name: String,
+  image: String,
+  occupation: String,
+  base: String
 })
 
 const userSchema = new Schema({
     name: String,
-
     email: String,
-
     heros:[superHeroSchema], 
-    // this needs to be save as well as the superHero
-
     googleId: String
 
 }, {

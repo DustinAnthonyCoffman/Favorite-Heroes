@@ -11,11 +11,15 @@ module.exports = {
 
 
 function create(req,res, next) {
-console.log(req.user._id);
 User.findById(req.user._id).exec(function(err,user) {
-    user.heros.push(req.body);
-    console.log(user.heros);
-    user.save(function(err) {
+    let {
+        name, 
+        image, 
+        base, 
+        occupation
+    } = req.body   //let name = req.body.name, let image = req.body.image etc.
+    user.heros.push({name, image, base, occupation});  //could also do work.base, work.occupation
+    user.save(function(err) {   //if user.hero.name exists render error
         if (err) return next(err)
         res.render('logged-In/favHeros', {
             heros: user.heros
@@ -30,9 +34,7 @@ User.findById(req.user._id).exec(function(err,user) {
 
 
 function show(req, res) {
-    // pull up the user id and get the favortites from the user not the heros
-  //use passport to access google id from Oauth
-  console.log(req.user)
+    console.log('ayeeee we showing!!!?!??!?!')
     Hero.find({hero: hero._id}, function(err, heros) {
     res.render('logged-In/favHeros', {
         heros
@@ -40,4 +42,23 @@ function show(req, res) {
   })
  
 }
-
+// if(!req.body){
+//     res.render('logged-In/home');
+// } else {
+// request(`${rootURL}${process.env.SUPERHERO_TOKEN}/search/${req.body.name}`, 
+// function(err, response, body) {
+//     // if (body === '') {res.render('logged-In/home'),{}}
+//     let hero = JSON.parse(body);
+//     console.log(hero);
+//     if (hero.results) {   //if your find has many results, the results key exists
+//         res.render('logged-In/heros', {
+//             hero: hero.results[0]            //just pick the first one
+//         })
+//     } else {
+//         res.render('logged-In/heros', {    //otherwise give the single result
+//             hero: hero
+//         })
+//     }
+// })
+// }
+// }

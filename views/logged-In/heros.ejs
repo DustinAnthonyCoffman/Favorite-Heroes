@@ -11,43 +11,46 @@
 
 
     <div class= "box">
-    <h1> <%= hero.results[0].name %> </h1>
+   
  
-    <img class="frame" src="<%= hero.results[0].image.url %>" alt=" <=%hero.results[0].name %>">
+    <img class="frame" src="<%= hero.image.url %>" alt=" <=%hero.name %>">
   
     <form action="/favHeros" method="post"> 
-        <input type="hidden" name="name" value="<%= hero.results[0].name %>">
+        <input type="hidden" name="name" value="<%= hero.name %>">
+        <input type="hidden" name="image" value="<%= hero.image.url %>">
+        <input type="hidden" name="base" value="<%= hero.work.base %>">
+        <input type="hidden" name="occupation" value="<%= hero.work.occupation %>">
+
     <button type="submit" class="btn btn-dark">Add Hero</button>
     </form> 
     
    
 
-    <form action="/heros/?_method=D" method="post"> 
-        <input type="number" name="name" value="<%=randomRound%>"> </input>
+    <form action="/heros/?_method=PUT" method="post"> 
+        <input type="hidden" name="name" value="<%=randomRound%>"> </input>
     <button type="submit" class="btn btn-dark">Random Hero</button>
     </form>
 
-
+  
+<h1> <%= hero.name %> </h1> 
 <ul>
  
-  <li> <b>Intelligence:</b> <%= hero.results[0].powerstats.intelligence %> </li> <br>
-  <li> <b>Strength:</b> <%= hero.results[0].powerstats.strength %> </li> <br>
-  <li><b>Speed:</b> <%= hero.results[0].powerstats.speed %> </li> <br>
-  <li><b>Durability:</b> <%= hero.results[0].powerstats.durability %> </li> <br>
-  <li><b>Power:</b> <%= hero.results[0].powerstats.power %> </li> <br>
-  <li><b>Combat:</b> <%= hero.results[0].powerstats.combat %> </li> <br>
-  <li><b>Publisher:</b> <%= hero.results[0].biography.publisher %> </li> <br>
-  <li><b>Alignment:</b> <%= hero.results[0].biography.alignment %> </li> <br>
-  <li><b>Gender:</b> <%= hero.results[0].appearance.gender %> </li> <br>
-  <li><b>Race:</b> <%= hero.results[0].appearance.race %> </li>
+  <li><b>Intelligence:</b> <%= hero.powerstats.intelligence %> </li> <br>
+  <li><b>Strength:</b> <%= hero.powerstats.strength %> </li> <br>
+  <li><b>Speed:</b> <%= hero.powerstats.speed %> </li> <br>
+  <li><b>Durability:</b> <%= hero.powerstats.durability %> </li> <br>
+  <li><b>Power:</b> <%= hero.powerstats.power %> </li> <br>
+  <li><b>Combat:</b> <%= hero.powerstats.combat %> </li> <br>
+  <li><b>Publisher:</b> <%= hero.biography.publisher %> </li> <br>
+  <li><b>Alignment:</b> <%= hero.biography.alignment %> </li> <br>
+  <li><b>Gender:</b> <%= hero.appearance.gender %> </li> <br>
+  <li><b>Race:</b> <%= hero.appearance.race %> </li>
+  <li><b>Occupation:</b> <%= hero.work.occupation %> </li>
+  <li><b>Base:</b> <%= hero.work.base %> </li>
 </ul>
 
 
-<ul> <b>Aliases</b><% hero.results[0].biography.aliases.forEach(function(s) { %>
-                        <li> <%= s %> </li>   
 
-    <% }) %> 
-</ul>
 
 
 

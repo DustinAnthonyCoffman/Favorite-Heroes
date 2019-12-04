@@ -5,8 +5,8 @@ const herosCtrl = require('../controllers/heros')
    
 
 
-router.post('/heros', herosCtrl.showHero); // this only shows a searched hero
-// router.post('/heros', herosCtrl.showRandom);    //this needs to be a put request
+router.post('/heros', herosCtrl.showHero); 
+router.put('/heros', herosCtrl.showRandom);    
     
  
 

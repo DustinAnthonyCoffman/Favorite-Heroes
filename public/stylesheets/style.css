@@ -26,7 +26,11 @@ body {
   border: solid 4px black
 }
 
-
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
 a {
   color: #00B7FF;

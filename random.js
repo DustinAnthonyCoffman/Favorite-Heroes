@@ -2,6 +2,37 @@
 "<%= hero.results[0].image.url %>" alt=" <=%hero.results[0].name %>"
 
 
+CAROSEL FOR THE FAVHEROS EJS
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src="https://i.imgur.com/AZ5109Z.jpg" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="https://i.imgur.com/2TArVgs.png" alt="Second slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="https://i.imgur.com/jPkyCHz.png" alt="Third slide">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+
+hero aliases
+
+<ul> <b>Aliases</b><% hero.results[0].biography.aliases.forEach(function(s) { %>
+                        <li> <%= s %> </li>   
+
+    <% }) %> 
+</ul>
+
 
     /deleteSkills/<%=idx%>?_method=DELETE"
 
@@ -51,7 +82,7 @@ function deleteOne(req, res) {
 }
 
 
-
+      <img class="frame" src="<%= hero.image %>" alt="<=% hero.name %>">
 
 //     let userId =  req.session.passport.user;
 

@@ -1,11 +1,14 @@
 <%- include('../partials/header') %>
 
         <h1>Your heros list</h1>
-      
-<ul>
 
-       <% heros.forEach(function(hero) { %>
-         <li> <%= hero.name %> </li>
+<ul>
+       <% heros.forEach(function(hero, idx) { %>
+         <form action="/favHeros/?_method=DELETE" method="post">
+            <li> <%= hero.name %> </li>
+            <button class="btn btn-dark" type="submit">Delete</button>
+          <img src="<%= hero.image %>" alt="<%= hero.name %>"> 
+        </form>
      <%  }) %>
 
     </ul>
