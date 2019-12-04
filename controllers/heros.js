@@ -21,9 +21,6 @@ function showRandom(req,res) {
 }
 
 function showHero(req,res) {
-    if(!req.body){
-        res.render('logged-In/home');
-    } else {
     request(`${rootURL}${process.env.SUPERHERO_TOKEN}/search/${req.body.name}`, 
     function(err, response, body) {
         // if (body === '') {res.render('logged-In/home'),{}}
@@ -38,7 +35,6 @@ function showHero(req,res) {
             })
         }
     })
-}
 }
        
    
