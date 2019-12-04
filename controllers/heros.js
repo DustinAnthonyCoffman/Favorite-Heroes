@@ -12,8 +12,6 @@ function getRandom(min, max) {
     return Math.random() * (max - min) + min; 
 } 
  
-let randomNum = getRandom(0,1); 
-let randomRound = Math.round(randomNum); 
  
  
 function showRandom(req,res) {

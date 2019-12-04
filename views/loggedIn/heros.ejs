@@ -6,7 +6,7 @@
 
 <% let randomNum = getRandom(1,731); %>
 <% let randomRound = Math.round(randomNum); %>
-<% let stringNum = randomRound.toString(); %>
+
 
 
 
@@ -26,10 +26,6 @@
     
    
 
-    <form action="/heros/?_method=PUT" method="post"> 
-        <input type="hidden" name="name" value="<%=randomRound%>"> </input>
-    <button type="submit" class="btn btn-dark">Random Hero</button>
-    </form>
 
   
 <h1> <%= hero.name %> </h1> 

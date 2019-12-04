@@ -1,6 +1,14 @@
 <%- include('../partials/header') %>
 
 
+<% function getRandom(min, max) { %>
+  <% return Math.random() * (max - min) + min; } %>
+
+
+<% let randomNum = getRandom(1,731); %>
+<% let randomRound = Math.round(randomNum); %>
+
+
 
 
 <div class="container">
@@ -9,16 +17,17 @@
 
 
 <form action="/heros" method="post"> 
-    <input type="text" name="name" placeholder="Enter a superhero name"> 
+    <input type="text" name="name" placeholder="Enter a superhero name" required> 
 
     <button class="btn btn-dark" type="submit">Search</button>
 
 </form>
 
 
+
 </div>
 
-<a href="/favHeros"> <button type="button" class="btn btn-dark">Hero Collection</button> </a>
+
 
 
 

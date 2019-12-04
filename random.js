@@ -1,6 +1,49 @@
 /*
 "<%= hero.results[0].image.url %>" alt=" <=%hero.results[0].name %>"
 
+<ul>
+       <% heros.forEach(function(hero, idx) { %>
+         <form action="/favHeros/<%= idx %>?_method=DELETE" method="post">
+            <li> <%= hero.name %> </li>
+            <button class="btn btn-dark" type="submit">Delete</button>
+          <img class= "frame" src="<%= hero.image %>" alt="<%= hero.name %>"> 
+        </form>
+     <%  }) %>
+
+    </ul>
+
+
+
+
+
+
+
+
+
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <% heros.forEach(function(hero, idx) { %>
+          <div class="carousel-item active">
+            <form action="/favHeros/<%= idx %>?_method=DELETE" method="post">
+                <li> <%= hero.name %> </li>
+                <button class="btn btn-dark" type="submit">Delete</button>
+              <img class= "d-block w-100" src="<%= hero.image %>" alt="<%= hero.name %>"> 
+            </form>
+            <% }) %>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+
+
 
 CAROSEL FOR THE FAVHEROS EJS
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
