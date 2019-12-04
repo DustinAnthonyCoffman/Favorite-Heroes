@@ -38,17 +38,6 @@ function showHero(req,res) {
     })
 }
 
-//         if (hero.results.length > 1) {   //if your find has many results, the results key exists
-//             res.render('loggedIn/heros', {
-//                 hero: hero.results[0]            //just pick the first one
-//             })
-//         } else {
-//             res.render('loggedIn/heros', {    //otherwise give the single result
-//                 hero: hero
-//             })
-//         }
-//     })
-// }
        
    
 
