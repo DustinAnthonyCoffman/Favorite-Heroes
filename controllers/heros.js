@@ -29,6 +29,7 @@ function showHero(req,res) {
     function(err, response, body) {
         // if (body === '') {res.render('loggedIn/home'),{}}
         let hero = JSON.parse(body);
+        console.log(hero);
         let heroRound = Math.round(getRandom(0, hero.results.length))
         res.render('loggedIn/heros', {
             hero: hero.results[heroRound]

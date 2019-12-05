@@ -6,7 +6,8 @@ const User = require('../models/user');
 module.exports = {
     create,
     show,
-    delete: deleteThis
+    delete: deleteThis,
+    update
 }
 
 
@@ -15,10 +16,11 @@ User.findById(req.user._id).exec(function(err,user) {
     let {
         name, 
         image, 
+        rating,
         base, 
         occupation
     } = req.body   //let name = req.body.name, let image = req.body.image etc.
-    user.heros.push({name, image, base, occupation});  //could also do work.base, work.occupation
+    user.heros.push({name, image, rating, base, occupation});  //could also do work.base, work.occupation
     user.save(function(err) {   //if user.hero.name exists render error
         if (err) return next(err)
         res.render('loggedIn/favHeros', {
@@ -29,9 +31,6 @@ User.findById(req.user._id).exec(function(err,user) {
 })
 }
      
-
-
-
 
 function show(req, res) {
     User.findById(req.user._id).exec(function(err, user) {
@@ -46,10 +45,27 @@ function show(req, res) {
 
 function deleteThis(req,res) {
     let heroIndex = req.params.id;
-    User.findById(req.user._id).exec(function(err, user) {
-        let exactId = user.heros[heroIndex]._id
-        if (err) res.render('loggedIn/heros')
-        user.heros.pull(exactId).then(res.redirect('/favHeros'))   
-       
-            })
-        }
+    User.findById(req.user._id, function(err, user) {
+        user.heros.remove(heroIndex);
+        user.save(function(err) {
+        res.redirect('/favHeros')
+    })
+})
+
+}
+
+function update(req,res) {
+    let heroId = req.params.id; //users hero mongo id, i.e. what was in our url request
+    User.findById(req.user._id, function(err, user) {
+        let userHero = user.heros;  //syntax to use forEach :)
+        userHero.forEach(function(h, idx) {
+            if(h._id == heroId) {    //if the id of the hero is = to our url id
+                let userRating = req.body.rating 
+                user.heros[idx].rating = userRating;
+                user.save(function(err) {
+                    res.redirect('/favHeros')
+                })
+            }
+        })
+    })
+}

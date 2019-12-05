@@ -2,8 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
+
 const superHeroSchema = new Schema({
   name: String,
+  rating: String,
   image: String,
   occupation: String,
   base: String

@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-        <h1>Your heros list</h1>
+
 
 
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -14,11 +14,29 @@
        <%   } else {   %>
             <div class="carousel-item">
       <%    } %>
-                <form action="/favHeros/<%= idx %>?_method=DELETE" method="post">
-                  <img class= "frame" src="<%= hero.image %>" alt="<%= hero.name %>"> 
-                  <h2> <%= hero.name %> </h2>
-                  <button class="btn btn-dark" type="submit">Delete</button>
-            
+              <br>
+               <h2 class= "heroName"> <%= hero.name %> </h2> 
+
+               <h1 class="heroRating"> <%= hero.rating %> </h1>
+
+                <!-- add their rating here -->
+
+
+               <img class= "frame" src="<%= hero.image %>" alt="<%= hero.name %>">
+                
+                <form action="/favHeros/<%=hero._id %>?_method=DELETE" method="POST">
+                  <button id="deleteButton" class="btn btn-dark" type="submit">X</button>
+                </form>
+                
+                
+                <form class="selection" action="/favHeros/<%=hero._id %>?_method=PUT" method="POST">
+                 <select name="rating" id="">
+                    <option value="Awesome">Awesome</option>
+                    <option value="Good">Good</option>
+                    <option value="Bad">Bad</option>
+                    <option value="Awful">Awful</option>
+                 </select>
+                  <button id="updateButton" class="btn btn-dark" type="submit">Update</button>
                 </form>
               </div>
             
@@ -36,9 +54,11 @@
         </a>
 
       </div>
+      </div>
 
-<%- include('../partials/footer') %>
-
+    </main>
+  </body>
+  </html>
 
 
 

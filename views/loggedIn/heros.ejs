@@ -13,36 +13,64 @@
     <div class= "box">
    
  
-    <img class="frame" src="<%= hero.image.url %>" alt=" <=%hero.name %>">
-  
-    <form action="/favHeros" method="post"> 
-        <input type="hidden" name="name" value="<%= hero.name %>">
-        <input type="hidden" name="image" value="<%= hero.image.url %>">
-        <input type="hidden" name="base" value="<%= hero.work.base %>">
-        <input type="hidden" name="occupation" value="<%= hero.work.occupation %>">
-
-    <button type="submit" class="btn btn-dark">Add Hero</button>
-    </form> 
-    
+        
+        <form action="/favHeros" method="post"> 
+            <input type="hidden" name="name" value="<%= hero.name %>">
+            <input type="hidden" name="image" value="<%= hero.image.url %>">
+            <input type="hidden" name="base" value="<%= hero.work.base %>">
+            <input type="hidden" name="occupation" value="<%= hero.work.occupation %>">
+            <input type="hidden" name="rating" value="">
+            
+            <button id="adder" type="submit" class="btn btn-dark">Add Hero</button>
+        </form> 
+        <img class="frame" src="<%= hero.image.url %>" alt=" <=%hero.name %>">
+        
    
 
 
   
-<h1> <%= hero.name %> </h1> 
-<ul>
- 
-  <li><b>Intelligence:</b> <%= hero.powerstats.intelligence %> </li> <br>
+
+<ul class="scrollable">
+    <br>
+<h1> <%= hero.name %> </h1> <br>
+  <li><b>Full Name:</b> <%= hero.biography["full-name"] %></li> 
+  <li><b>Alter Egos:</b> <%= hero.biography["alter-egos"] %></li> 
+  <li><b>Alignment:</b> <%= hero.biography.alignment %> </li> <br>
+  
+<h1> <b> Stats: </b></h1> <br>
+  <li><b>Gender:</b> <%= hero.appearance.gender %> </li> <br>
+  <li><b>Race:</b> <%= hero.appearance.race %> </li> <br>
+  <li><b>Height: </b> <% hero.appearance.height.forEach(function(i) { %>
+                        <%= i %>
+  <% }) %> </li> <br>
+  <li><b>Weight: </b> <% hero.appearance.weight.forEach(function(i) { %>
+                        <%= i %>
+  <% }) %> </li> <br>
+  <li><b>Eye Color: </b> <%= hero.appearance["eye-color"] %> </li> <br>
+  <li><b>Hair Color: </b> <%= hero.appearance["hair-color"] %> </li> <br>
+  <li><b>Intelligence: </b> <%= hero.powerstats.intelligence %> </li> <br>
   <li><b>Strength:</b> <%= hero.powerstats.strength %> </li> <br>
   <li><b>Speed:</b> <%= hero.powerstats.speed %> </li> <br>
   <li><b>Durability:</b> <%= hero.powerstats.durability %> </li> <br>
   <li><b>Power:</b> <%= hero.powerstats.power %> </li> <br>
   <li><b>Combat:</b> <%= hero.powerstats.combat %> </li> <br>
-  <li><b>Publisher:</b> <%= hero.biography.publisher %> </li> <br>
-  <li><b>Alignment:</b> <%= hero.biography.alignment %> </li> <br>
-  <li><b>Gender:</b> <%= hero.appearance.gender %> </li> <br>
-  <li><b>Race:</b> <%= hero.appearance.race %> </li>
+  
+<h1> <b>Affiliations:</b> </h1> <br>
+  <li><b>Groups:</b> <%= hero.connections["group-affiliation"] %> </li> <br>
+  <li><b>Relatives:</b> <%= hero.connections.relatives %> </li> <br>
+  
+<h1><b>Biography:</b></h1> <br> 
+  <li><b>Place Of Birth: </b><%= hero.biography["place-of-birth"] %></li> 
   <li><b>Occupation:</b> <%= hero.work.occupation %> </li>
   <li><b>Base:</b> <%= hero.work.base %> </li>
+  <li><b>Publisher:</b> <%= hero.biography.publisher %> </li> <br>
+  <li><b>First Appearance:</b> <%= hero.biography["first-appearance"] %> </li> <br>
+  <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium aut unde iste obcaecati quis voluptatem beatae sint, quos et eaque tempore veritatis reprehenderit numquam sit id. Ipsum nam fugiat dolorum?</li>
+  <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium aut unde iste obcaecati quis voluptatem beatae sint, quos et eaque tempore veritatis reprehenderit numquam sit id. Ipsum nam fugiat dolorum?</li>
+  <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium aut unde iste obcaecati quis voluptatem beatae sint, quos et eaque tempore veritatis reprehenderit numquam sit id. Ipsum nam fugiat dolorum?</li>
+  <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium aut unde iste obcaecati quis voluptatem beatae sint, quos et eaque tempore veritatis reprehenderit numquam sit id. Ipsum nam fugiat dolorum?</li>
+  <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium aut unde iste obcaecati quis voluptatem beatae sint, quos et eaque tempore veritatis reprehenderit numquam sit id. Ipsum nam fugiat dolorum?</li>
+  <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium aut unde iste obcaecati quis voluptatem beatae sint, quos et eaque tempore veritatis reprehenderit numquam sit id. Ipsum nam fugiat dolorum?</li>
 </ul>
 
 
@@ -53,4 +81,6 @@
 </div>
 
 
-<%- include('../partials/footer') %>
+</main>
+</body>
+</html>
