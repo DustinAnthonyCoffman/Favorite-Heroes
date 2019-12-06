@@ -26,30 +26,50 @@ body {
   border: solid 4px black
 }
 
-img.frame:hover {
-  cursor: pointer;
-}
 
-img.frame + form {
-opacity: 0;
-transition: all 2s;
-
-/*move into image on page */
-}
-
-img.frame:hover + form {
-opacity: 1;
-}
 
 .heroName {
-  margin-left: 160px;
+  position: absolute;
+  margin-left: 130px;
+  margin-top: 30px;
+  color: whitesmoke;
+  opacity: .5;
+  
+  /*text decoration google font */
+}
+.heroRating {
+  position: absolute;
+  margin-left: 350px;
+  margin-top: 540px;
+  color: whitesmoke;
+  opacity: .5;
   /*text decoration google font */
 }
 
 .selection {
   margin-left: 100px;
 }
+.title {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 4px;
+  margin-bottom: 40px;
+  margin-right: 20px;
+}
 
+.mainName {
+  font-family: 'Cinzel', serif;
+}
+
+.subs {
+  font-family: 'Special Elite', cursive;
+}
+
+#searchButton {
+  margin-left: 30px;
+}
+#searchBar {
+  margin-left: 20px;
+}
 
 #updateButton {
   margin-left: 50px;
@@ -61,8 +81,8 @@ opacity: 1;
 #deleteButton {
   z-index: 1;
   position: absolute;
-  bottom: 600px;
-  margin-left: 200px;
+  top: 672px;
+  margin-left: 340px;
 }
 
 ul {
@@ -83,6 +103,31 @@ background-color: rgb(207, 199, 199);
 position: absolute;
 overflow: scroll;
 }
+
+.type {
+
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+
 
 a {
   color: #00B7FF;

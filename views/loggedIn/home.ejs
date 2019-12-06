@@ -8,7 +8,7 @@
 <% let randomNum = getRandom(1,731); %>
 <% let randomRound = Math.round(randomNum); %>
 
-
+<h1 class="title"> <b> Favorite Heroes </b></h1>
 
 
 <div class="container">
@@ -17,9 +17,9 @@
 
 
 <form action="/heros" method="post"> 
-    <input type="text" name="name" placeholder="Enter a superhero name" required> 
+    <input id="searchBar" type="text" name="name" placeholder="Enter a superhero name" required> 
 
-    <button class="btn btn-dark" type="submit">Search</button>
+    <button id="searchButton" class="btn btn-dark" type="submit">Search</button>
 
 </form>
 

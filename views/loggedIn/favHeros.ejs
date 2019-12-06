@@ -15,9 +15,9 @@
             <div class="carousel-item">
       <%    } %>
               <br>
-               <h2 class= "heroName"> <%= hero.name %> </h2> 
+               <h1 class= "heroName"> <%= hero.name %> </h1> 
 
-               <h1 class="heroRating"> <%= hero.rating %> </h1>
+               <h2 class="heroRating"> Score: <%= hero.rating %> </h2>
 
                 <!-- add their rating here -->
 
@@ -25,7 +25,7 @@
                <img class= "frame" src="<%= hero.image %>" alt="<%= hero.name %>">
                 
                 <form action="/favHeros/<%=hero._id %>?_method=DELETE" method="POST">
-                  <button id="deleteButton" class="btn btn-dark" type="submit">X</button>
+                  <button id="deleteButton" class="btn btn-dark" type="submit">Delete</button>
                 </form>
                 
                 

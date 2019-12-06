@@ -32,45 +32,39 @@
 
 <ul class="scrollable">
     <br>
-<h1> <%= hero.name %> </h1> <br>
-  <li><b>Full Name:</b> <%= hero.biography["full-name"] %></li> 
-  <li><b>Alter Egos:</b> <%= hero.biography["alter-egos"] %></li> 
+<h1 class="mainName"> <%= hero.name %> </h1> <br>
+  <li><b>Full Name:</b> <%= hero.biography["full-name"] %></li> <br>
+  <li><b>Alter Egos:</b> <%= hero.biography["alter-egos"] %></li> <br>
   <li><b>Alignment:</b> <%= hero.biography.alignment %> </li> <br>
   
-<h1> <b> Stats: </b></h1> <br>
-  <li><b>Gender:</b> <%= hero.appearance.gender %> </li> <br>
-  <li><b>Race:</b> <%= hero.appearance.race %> </li> <br>
-  <li><b>Height: </b> <% hero.appearance.height.forEach(function(i) { %>
+<h1 class="subs"> <b> Stats: </b></h1> <br>
+  <li><b>Gender:</b></li><li class="type"><%= hero.appearance.gender %> </li> <br>
+  <li><b>Race:</b></li><li class="type"><%= hero.appearance.race %> </li> <br>
+  <li><b>Height:</b></li><li class="type"><% hero.appearance.height.forEach(function(i) { %>
                         <%= i %>
   <% }) %> </li> <br>
-  <li><b>Weight: </b> <% hero.appearance.weight.forEach(function(i) { %>
+  <li><b>Weight:</b></li><li class="type"><% hero.appearance.weight.forEach(function(i) { %>
                         <%= i %>
   <% }) %> </li> <br>
-  <li><b>Eye Color: </b> <%= hero.appearance["eye-color"] %> </li> <br>
-  <li><b>Hair Color: </b> <%= hero.appearance["hair-color"] %> </li> <br>
-  <li><b>Intelligence: </b> <%= hero.powerstats.intelligence %> </li> <br>
-  <li><b>Strength:</b> <%= hero.powerstats.strength %> </li> <br>
-  <li><b>Speed:</b> <%= hero.powerstats.speed %> </li> <br>
-  <li><b>Durability:</b> <%= hero.powerstats.durability %> </li> <br>
-  <li><b>Power:</b> <%= hero.powerstats.power %> </li> <br>
-  <li><b>Combat:</b> <%= hero.powerstats.combat %> </li> <br>
+<li><b>Eye Color:</b></li><li class="type"><%= hero.appearance["eye-color"] %> </li> <br>
+<li><b>Hair Color:</b></li><li class="type"><%= hero.appearance["hair-color"] %> </li> <br>
+<li><b>Intelligence:</b></li><li class="type"><%= hero.powerstats.intelligence %> </li> <br>
+<li><b>Strength:</b></li><li class="type"><%= hero.powerstats.strength %> </li> <br>
+<li><b>Speed:</b></li><li class="type"><%= hero.powerstats.speed %> </li> <br>
+<li><b>Durability:</b></li><li class="type"><%= hero.powerstats.durability %> </li> <br>
+<li><b>Power:</b></li><li class="type"><%= hero.powerstats.power %> </li> <br>
+<li><b>Combat:</b></li><li class="type"><%= hero.powerstats.combat %> </li> <br>
   
-<h1> <b>Affiliations:</b> </h1> <br>
-  <li><b>Groups:</b> <%= hero.connections["group-affiliation"] %> </li> <br>
-  <li><b>Relatives:</b> <%= hero.connections.relatives %> </li> <br>
+<h1 class="subs"> <b>Affiliations:</b> </h1> <br>
+<li><b>Groups:</b></li><li class="type"><%= hero.connections["group-affiliation"] %> </li> <br>
+<li><b>Relatives:</b></li><li class="type"><%= hero.connections.relatives %> </li> <br>
   
-<h1><b>Biography:</b></h1> <br> 
-  <li><b>Place Of Birth: </b><%= hero.biography["place-of-birth"] %></li> 
-  <li><b>Occupation:</b> <%= hero.work.occupation %> </li>
-  <li><b>Base:</b> <%= hero.work.base %> </li>
-  <li><b>Publisher:</b> <%= hero.biography.publisher %> </li> <br>
-  <li><b>First Appearance:</b> <%= hero.biography["first-appearance"] %> </li> <br>
-  <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium aut unde iste obcaecati quis voluptatem beatae sint, quos et eaque tempore veritatis reprehenderit numquam sit id. Ipsum nam fugiat dolorum?</li>
-  <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium aut unde iste obcaecati quis voluptatem beatae sint, quos et eaque tempore veritatis reprehenderit numquam sit id. Ipsum nam fugiat dolorum?</li>
-  <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium aut unde iste obcaecati quis voluptatem beatae sint, quos et eaque tempore veritatis reprehenderit numquam sit id. Ipsum nam fugiat dolorum?</li>
-  <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium aut unde iste obcaecati quis voluptatem beatae sint, quos et eaque tempore veritatis reprehenderit numquam sit id. Ipsum nam fugiat dolorum?</li>
-  <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium aut unde iste obcaecati quis voluptatem beatae sint, quos et eaque tempore veritatis reprehenderit numquam sit id. Ipsum nam fugiat dolorum?</li>
-  <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium aut unde iste obcaecati quis voluptatem beatae sint, quos et eaque tempore veritatis reprehenderit numquam sit id. Ipsum nam fugiat dolorum?</li>
+<h1 class="subs"><b>Biography:</b></h1> <br> 
+<li><b>Place Of Birth:</b></li><li class="type"><%= hero.biography["place-of-birth"] %></li> <br>
+<li><b>Occupation:</b></li><li class="type"><%= hero.work.occupation %> </li> <br>
+<li><b>Base:</b></li><li class="type"><%= hero.work.base %> </li> <br>
+<li><b>Publisher:</b></li><li class="type"><%= hero.biography.publisher %> </li> <br>
+<li><b>First Appearance:</b></li><li class="type"><%= hero.biography["first-appearance"] %> </li> <br>
 </ul>
 
 
