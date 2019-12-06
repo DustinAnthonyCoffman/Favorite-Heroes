@@ -24,5 +24,12 @@
 ###  -Mongoose
 ###  -HTML / CSS
 ###  -Express
+
+# Stretch Goals:
+## User to user interaction
+## Hero collection limit
+## User hero collectio battles
+
+
 # Heroku:
 [Favorite-Heroes](https://sei-favorite-heroes.herokuapp.com/)
