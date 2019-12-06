@@ -17,6 +17,12 @@
 ![alt text](https://i.imgur.com/lAFKgEU.png)
 
 
-
+# Technologies Used:
+###  -Javascript
+###  -NodeJs
+###  -MongoDb
+###  -Mongoose
+###  -HTML / CSS
+###  -Express
 # Heroku:
 [Favorite-Heroes](https://sei-favorite-heroes.herokuapp.com/)
