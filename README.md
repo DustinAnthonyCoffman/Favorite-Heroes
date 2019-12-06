@@ -26,9 +26,9 @@
 ###  -Express
 
 # Stretch Goals:
-## User to user interaction
-## Hero collection limit
-## User hero collectio battles
+- User to user interaction
+- Hero collection limit
+- User hero collection battles
 
 
 # Heroku:
