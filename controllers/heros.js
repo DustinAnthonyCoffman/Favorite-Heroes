@@ -27,9 +27,13 @@ function showRandom(req,res) {
 function showHero(req,res) {
     request(`${rootURL}${process.env.SUPERHERO_TOKEN}/search/${req.body.name}`, 
     function(err, response, body) {
-        // if (body === '') {res.render('loggedIn/home'),{}}
         let hero = JSON.parse(body);
-        console.log(hero);
+        if (hero.results.length === 1) {
+            res.render('loggedIn/heros', {
+                hero: hero.results[0]
+
+            })
+        }
         let heroRound = Math.round(getRandom(0, hero.results.length))
         res.render('loggedIn/heros', {
             hero: hero.results[heroRound]
