@@ -1,5 +1,4 @@
 <p align="center">
-  <b>Favorite Heroes</b><br>
   <br><br>
   <img src="https://i.imgur.com/DHMRoS6.png">
 </p>
