@@ -1,15 +1,11 @@
 <p align="center">
-  <b>Some Links:</b><br>
-  <a href="#">Link 1</a> |
-  <a href="#">Link 2</a> |
-  <a href="#">Link 3</a>
+  <b>Favorite Heroes</b><br>
   <br><br>
-  <img src="http://s.4cdn.org/image/title/105.gif">
+  <img src="https://i.imgur.com/DHMRoS6.png">
 </p>
 
 
 
-#                                ![alt text](https://i.imgur.com/DHMRoS6.png)
 
 
 # FH allows it's users to search through a database of superheros to view their stats and other information. 
