@@ -1,5 +1,9 @@
 
+
+
+<p align="center">
 # ![alt text](https://i.imgur.com/DHMRoS6.png)
+</p>
 
 # FH allows it's users to search through a database of superheros to view their stats and other information. 
 
